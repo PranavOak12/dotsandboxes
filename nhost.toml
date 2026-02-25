@@ -1,0 +1,23 @@
+# Nhost configuration for dots-and-boxes
+
+[project]
+name = "dots-and-boxes-multiplayer"
+
+# Define the Node.js Socket.io service
+[[services]]
+name = "dots-and-boxes"
+image = "dots-and-boxes"
+build = { context = "." }
+ports = [
+  { port = 3000, type = "http", publish = true }
+]
+
+# Standard Nhost services (optional, if you want to use them)
+[auth]
+enabled = true
+
+[storage]
+enabled = true
+
+[hasura]
+enabled = true
